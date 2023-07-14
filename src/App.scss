@@ -1,0 +1,214 @@
+$primary: #0090c3;
+$warning: #f0c717;
+
+:export {
+  primaty: $primary;
+}
+
+@import '~bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap/scss/reboot';
+
+.btn {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  color: white !important;
+}
+
+.btn-light,
+.btn-light:hover,
+.btn-light:active,
+.btn-light:visited {
+  color: black !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border: 1px solid black !important;
+}
+
+.btn-light:hover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+body {
+  background-color: #faf8ef;
+  // font-family: Montserrat;
+  // font-style: normal;
+  // font-weight: 400;
+  // line-height: normal;
+  li {
+    list-style-type: none;
+  }
+}
+
+.App {
+  position: relative;
+
+  .navbar-body {
+    margin-bottom: 60px; //100px
+
+    .nav-logo {
+      height: 100px; //150
+    }
+    .navbar-row {
+      flex-grow: 0;
+
+      .volya-navbar {
+        > * {
+          color: black;
+          align-self: center;
+        }
+
+        .faire-don-btn {
+          background-color: #fcf4d1;
+          color: black !important;
+          border: none;
+        }
+      }
+    }
+  }
+
+  .body-container {
+    margin-bottom: 50px;
+  }
+
+  .footer-container {
+    margin-top: 60px;
+    width: 100vw;
+    background-color: $warning;
+
+    .footer-content {
+      display: flex;
+      flex-flow: row wrap;
+      padding-top: 40px;
+      padding-bottom: 30px;
+      justify-content: center;
+
+      @media (min-width: 992px) {
+        .slogan {
+          flex-basis: 20%;
+        }
+        .link-categories {
+          flex-basis: 80%;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .slogan {
+          flex-basis: 40%;
+        }
+        .link-categories {
+          flex-basis: 60%;
+        }
+      }
+
+      .slogan {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-bottom: 40px;
+
+        img {
+          width: 80px;
+        }
+        p {
+          flex-basis: 70%;
+        }
+
+        @media (min-width: 992px) {
+          & {
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            p {
+              flex-basis: 100%;
+            }
+          }
+        }
+      }
+
+      .link-categories {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+
+        > div {
+          margin-left: 40px;
+        }
+
+        h6 {
+          margin-bottom: 10px;
+          text-transform: uppercase;
+        }
+
+        ul {
+          display: flex;
+          flex-flow: column;
+          justify-content: flex-start;
+          margin-top: unset;
+
+          li {
+            margin-bottom: 10px;
+            text-transform: capitalize;
+
+            a {
+              text-transform: lowercase;
+               color: black;
+               text-decoration: none;
+            }
+
+            span.address {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .socials {
+        flex-basis: 100%;
+        align-items: self-end;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+
+        svg {
+          width: 44px;
+          height: 44px;
+          margin-right: 16px;
+          color: $primary;
+        }
+
+        button {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+
+  .top-background-container {
+    height: 500px;
+    width: 100%;
+    background: linear-gradient(180deg, #f0c611 0%, rgba(240, 198, 17, 0.71) 72.4%, rgba(240, 198, 17, 0) 100%);
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+
+    > div {
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url('~/public/dot-group.png');
+      background-size: 500px 500px;
+      background-repeat: no-repeat;
+      background-position-x: right;
+      background-position-y: -60%;
+    }
+  }
+}
