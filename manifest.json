@@ -1,0 +1,20 @@
+{
+  "short_name": "VolyaAsso",
+  "name": "Volya association",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo_volya.png",
+      "type": "image/png",
+      "sizes": "165x151"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "background_color": "#FAF8EF"
+}
