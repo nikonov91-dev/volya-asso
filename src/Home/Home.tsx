@@ -15,13 +15,13 @@ export const Home = () => {
       <Banner />
 
       <div className="goal-photos-container">
-        <div className="photo-collect">
+        <div className="photo-collect" style={{'backgroundImage': process.env.PUBLIC_URL + '/our-goals/collecte-laide-humanitaire.png'}}>
           <div>{t('collecte de l’aide humanitaire pour l’Ukraine')}</div>
         </div>
-        <div className="photo-inclusion">
+        <div className="photo-inclusion" style={{'backgroundImage': process.env.PUBLIC_URL + '/our-goals/inclusion-apporte-laide-deplaces.png'}}>
           <div>{t('Inclusion et apporté de l’aide aux deplacés')}</div>
         </div>
-        <div className="photo-sensibilisation">
+        <div className="photo-sensibilisation" style={{'backgroundImage': process.env.PUBLIC_URL + '/our-goals/sensibilisation-communication.png'}}>
           <div>{t('sensibilisation et communication')}</div>
         </div>
       </div>
