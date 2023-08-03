@@ -1,18 +1,15 @@
 {
   "files": {
-    "main.css": "/volya-asso/static/css/main.c5df0771.css",
-    "main.js": "/volya-asso/static/js/main.0f804ca1.js",
-    "static/media/collecte-laide-humanitaire.png": "/volya-asso/static/media/collecte-laide-humanitaire.64e4437352c95844e453.png",
-    "static/media/inclusion-apporte-laide-deplaces.png": "/volya-asso/static/media/inclusion-apporte-laide-deplaces.7e6220e293855849a644.png",
-    "static/media/sensibilisation-communication.png": "/volya-asso/static/media/sensibilisation-communication.3796560734ca0b09ab58.png",
+    "main.css": "/volya-asso/static/css/main.a6909925.css",
+    "main.js": "/volya-asso/static/js/main.77e83037.js",
     "static/media/dot-group.png": "/volya-asso/static/media/dot-group.85ac6f33f4206e11c803.png",
     "index.html": "/volya-asso/index.html",
     "static/media/getFetch.cjs": "/volya-asso/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.c5df0771.css.map": "/volya-asso/static/css/main.c5df0771.css.map",
-    "main.0f804ca1.js.map": "/volya-asso/static/js/main.0f804ca1.js.map"
+    "main.a6909925.css.map": "/volya-asso/static/css/main.a6909925.css.map",
+    "main.77e83037.js.map": "/volya-asso/static/js/main.77e83037.js.map"
   },
   "entrypoints": [
-    "static/css/main.c5df0771.css",
-    "static/js/main.0f804ca1.js"
+    "static/css/main.a6909925.css",
+    "static/js/main.77e83037.js"
   ]
 }
