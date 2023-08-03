@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "tsx,jsx",
+  "delay": 10000,
+  "exec": "i18next 'src/**/*.tsx' --config i18next-parser.config.ts"
+}

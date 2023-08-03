@@ -52,6 +52,7 @@ body {
     .nav-logo {
       height: 100px; //150
     }
+
     .navbar-row {
       flex-grow: 0;
 
@@ -59,6 +60,15 @@ body {
         > * {
           color: black;
           align-self: center;
+          margin-right: 8px;
+        }
+
+        .switch-lang {
+          border: none;
+          padding: 8px;
+          background: none;
+          color: black !important;
+          box-shadow: none;
         }
 
         .faire-don-btn {
@@ -119,24 +129,41 @@ body {
         }
 
         @media (min-width: 992px) {
-          & {
-            align-items: flex-start;
-            justify-content: flex-start;
+          align-items: flex-start;
+          justify-content: flex-start;
 
-            p {
-              flex-basis: 100%;
-            }
+          p {
+            flex-basis: 100%;
           }
         }
       }
 
       .link-categories {
         display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-end;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        flex-basis: 50%;
 
-        > div {
+        .link-groups {
           margin-left: 40px;
+          flex-basis: 33%;
+
+          &:last-child {
+            flex-basis: 100%;
+          }
+        }
+
+        @media (min-width: 576px) {
+          flex-wrap: nowrap;
+          justify-content: flex-end;
+
+          .link-groups {
+            // flex-basis: 33%;
+
+            &:last-child {
+              // flex-basis: 40%;
+            }
+          }
         }
 
         h6 {
@@ -155,9 +182,12 @@ body {
             text-transform: capitalize;
 
             a {
+              color: black;
+              text-decoration: none;
+            }
+
+            .contacts a {
               text-transform: lowercase;
-               color: black;
-               text-decoration: none;
             }
 
             span.address {
@@ -204,7 +234,7 @@ body {
       position: absolute;
       top: 0;
       right: 0;
-      background-image: url('~/public/dot-group.png');
+      background-image: url('../public/dot-group.png');
       background-size: 500px 500px;
       background-repeat: no-repeat;
       background-position-x: right;

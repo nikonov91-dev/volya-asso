@@ -51,10 +51,6 @@ h1 {
 
     button:first-child {
       margin-right: 32px;
-      // background-color: #0090c3;
-      &:hover {
-        // background-color: #5caac6;
-      }
     }
 
     button:nth-child(2) {
@@ -65,25 +61,19 @@ h1 {
       &:hover {
         background-color: rgba(255, 255, 255, 0.4);
       }
-
-      @media (min-width: 1200px) {
-        & {
-          margin-top: 10px;
-        }
-      }
     }
   }
 
   .banner-help {
     position: absolute;
-    top: 150px;
+    top: 85px;
     right: 0;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     border: none;
 
-    @media (min-width: 1200px) {
+    @media (min-width: 576px) {
       & {
         top: 200px;
       }
@@ -130,13 +120,13 @@ h1 {
   }
 
   .photo-collect {
-    background-image: url('~/public/our-goals/collecte-laide-humanitaire.png');
+    background-image: url('../../public/our-goals/collecte-laide-humanitaire.png');
   }
   .photo-inclusion {
-    background-image: url('~/public/our-goals/inclusion-apporte-laide-deplaces.png');
+    background-image: url('../../public/our-goals/inclusion-apporte-laide-deplaces.png');
   }
   .photo-sensibilisation {
-    background-image: url('~/public/our-goals/sensibilisation-communication.png');
+    background-image: url('../../public/our-goals/sensibilisation-communication.png');
   }
 }
 
@@ -361,6 +351,7 @@ h1 {
   }
   .all-events-btn {
     align-self: flex-end;
+    text-transform: uppercase;
   }
 }
 
@@ -431,7 +422,6 @@ h1 {
       text-transform: uppercase;
       color: white !important;
       border-color: white !important;
-      width: max-content;
     }
   }
 }
