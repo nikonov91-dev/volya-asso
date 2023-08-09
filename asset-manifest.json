@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.681a8b5e.css",
-    "main.js": "/static/js/main.960a67e8.js",
+    "main.js": "/static/js/main.3f8b5686.js",
     "static/media/collecte-laide-humanitaire.png": "/static/media/collecte-laide-humanitaire.64e4437352c95844e453.png",
     "static/media/inclusion-apporte-laide-deplaces.png": "/static/media/inclusion-apporte-laide-deplaces.7e6220e293855849a644.png",
     "static/media/sensibilisation-communication.png": "/static/media/sensibilisation-communication.3796560734ca0b09ab58.png",
@@ -10,10 +10,10 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.681a8b5e.css.map": "/static/css/main.681a8b5e.css.map",
-    "main.960a67e8.js.map": "/static/js/main.960a67e8.js.map"
+    "main.3f8b5686.js.map": "/static/js/main.3f8b5686.js.map"
   },
   "entrypoints": [
     "static/css/main.681a8b5e.css",
-    "static/js/main.960a67e8.js"
+    "static/js/main.3f8b5686.js"
   ]
 }
