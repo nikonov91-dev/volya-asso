@@ -1,4 +1,4 @@
-import { Badge, Button, Card, CardImg } from 'react-bootstrap';
+import { Badge, Button, Card } from 'react-bootstrap';
 import { Banner } from './Banner';
 import { partners, events, news } from '../fixtures';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,27 +7,37 @@ import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { EVENTS_LINK } from '../App';
 import { useTranslation } from 'react-i18next';
+import dotGroupSVG from '../assets/dot-group.svg';
+import aideHumanPNG from '../assets/our-goals/collecte-laide-humanitaire.png';
+import inclusionPNG from '../assets/our-goals/inclusion-apporte-laide-deplaces.png';
+import sensibilisationPNG from '../assets/our-goals/sensibilisation-communication.png';
+import { JoinUs } from '../JoinUs';
+import './Home.scss';
+
+const truncatedEvents = [...events].splice(0, 4 );
 
 export const Home = () => {
   const { t } = useTranslation();
   return (
-    <>
+    <div className={'home'}>
       <Banner />
-
       <div className="goal-photos-container">
-        <div className="photo-collect" style={{'backgroundImage': process.env.PUBLIC_URL + '/our-goals/collecte-laide-humanitaire.png'}}>
+        {/* <div className="photo-collect" style={{'backgroundImage': aideHumanPNG}}> */}
+        <div className="photo-collect">
           <div>{t('collecte de l’aide humanitaire pour l’Ukraine')}</div>
         </div>
-        <div className="photo-inclusion" style={{'backgroundImage': process.env.PUBLIC_URL + '/our-goals/inclusion-apporte-laide-deplaces.png'}}>
+        {/* <div className="photo-inclusion" style={{'backgroundImage': inclusionPNG}}> */}
+        <div className="photo-inclusion">
           <div>{t('Inclusion et apporté de l’aide aux deplacés')}</div>
         </div>
-        <div className="photo-sensibilisation" style={{'backgroundImage': process.env.PUBLIC_URL + '/our-goals/sensibilisation-communication.png'}}>
+        {/* <div className="photo-sensibilisation" style={{'backgroundImage': sensibilisationPNG}}> */}
+        <div className="photo-sensibilisation">
           <div>{t('sensibilisation et communication')}</div>
         </div>
       </div>
 
       <div className="volya-about-us-container">
-        <img src="/dot-group.svg" />
+        <img src={dotGroupSVG} />
         <div className="dummy" />
         <div className="main">
           <h2>{t('Association VOLYA')}</h2>
@@ -60,7 +70,7 @@ export const Home = () => {
       <div className="events-container">
         <h1 className="title">{'Événements'}</h1>
         <ul>
-          {events.map((e) => (
+          {truncatedEvents.map((e) => (
             <li key={e.name}>
               <img src={`${process.env.PUBLIC_URL}/events/${e.img}`} alt={`partner-${e.name}`} />
               <div className="info">
@@ -101,23 +111,8 @@ export const Home = () => {
         <Button variant="light">{t('Plus d’actualités')}</Button>
       </div>
 
-      <div className="volya-join-us-container">
-        <img src="/dot-group.svg" />
-        <img src="/dot-group.svg" />
-        <img className="join-us" src="join-us.png" />
-        <div className="main">
-          <h2>{t('Rejoinez-nous')}</h2>
-          <p>
-            {t(
-              'Découvrez comment soutenir l’Ukraine: faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd’hui pour que l’Ukraine connaisse la gloire demain!'
-            )}
-          </p>
-          <Button variant="light" className={'CTA'}>
-            {t('Devenir benevole')}
-          </Button>
-        </div>
-      </div>
-    </>
+      <JoinUs/>
+    </div>
   );
 };
 

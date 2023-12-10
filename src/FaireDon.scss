@@ -1,0 +1,112 @@
+@import 'App.scss';
+
+.faire-don {
+  display: flex;
+  flex-flow: column;
+
+  h1 {
+    font-size: 74px;
+    align-self: flex-start;
+    margin-bottom: 24px;
+  }
+  .CTA-group {
+    display: flex;
+    flex-flow: column;
+    height: fit-content;
+    margin-top: 130px;
+
+    .left-column {
+      margin-bottom: 20px;
+
+      &::after {
+        margin-top: 40px;
+        content: 'OU';
+      }
+    }
+
+    .left-column,
+    .right-column {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      * {
+        text-transform: uppercase;
+      }
+    }
+    
+    @media (min-width: 992px) {
+      & {
+        flex-flow: row nowrap;
+
+        .left-column::after {
+          margin-top: 0;
+          content: none;
+        }
+
+        .left-column,
+        .right-column {
+          flex-basis: 50%;
+        }
+      }
+    }
+
+    img {
+      width: 25%;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .big-btn {
+      padding: 40px 35px;
+      width: fit-content;
+    }
+
+    .right-column {
+      span:first-child,
+      span:nth-child(2),
+      span:nth-child(5) {
+        margin-bottom: 25px;
+      }
+      span:nth-child(3) {
+        margin-bottom: 15px;
+      }
+      span:nth-child(2),
+      span:nth-child(6) {
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+  .utilisation-dons {
+    background-color: white;
+    padding: 40px 50px;
+
+    h2, h4, p {
+      margin-bottom: 30px;
+    }
+
+    li {
+      margin-bottom: 15px;
+      &::before {
+        content: "\2022";
+        color:red;
+        font-weight: bold;
+        font-size: 2em;
+        width: 1em;
+        display: inline-block;
+        line-height: 16px;
+        vertical-align: text-top;
+      }
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    h4 {
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,5 +1,4 @@
-import { Button, Container } from 'react-bootstrap';
-import './Home.scss';
+import { Button } from 'react-bootstrap';
 
 export const Banner = () => (
   <div className="banner-container">

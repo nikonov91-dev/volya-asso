@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { FAIRE_DON_LINK } from './App';
 
 export const Navigation = () => {
   const { t, i18n } = useTranslation();
@@ -36,7 +37,7 @@ export const Navigation = () => {
             <NavLink className={'nav-link'} to="/joindre">
               {t('Nous joindre')}
             </NavLink>
-            <Button className="faire-don-btn">{t('Faire Don')}</Button>
+            <NavLink className="faire-don-btn btn" to={FAIRE_DON_LINK}>{t('Faire Don')}</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

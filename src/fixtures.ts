@@ -27,24 +27,35 @@ export const events = [
     img: 'dummy-event.png',
     date: '07/02/2023 9h00',
     address: '12 rue Volgan, Nantes',
+    description: 'Bla bla ablbllblalvllbal asdf lbla ldafjlsj. Bla bla lllalllllaaaa'
   },
   {
     name: 'Volley avec Volya2',
     img: 'dummy-event.png',
     date: '07/02/2023 9h00',
     address: '12 rue Volgan, Nantes',
+    description: 'Bla bla ablbllblalvllbal asdf lbla ldafjlsj. Bla bla lllalllllaaaa'
   },
   {
     name: 'Volley avec Volya3',
     img: 'dummy-event.png',
     date: '07/02/2023 9h00',
     address: '12 rue Volgan, Nantes',
+    description: 'Bla bla ablbllblalvllbal asdf lbla ldafjlsj. Bla bla lllalllllaaaa'
   },
   {
     name: 'Volley avec Volya4',
     img: 'dummy-event.png',
     date: '07/02/2023 9h00',
     address: '12 rue Volgan, Nantes',
+    description: 'Bla bla ablbllblalvllbal asdf lbla ldafjlsj. Bla bla lllalllllaaaa'
+  },
+  {
+    name: 'Volley avec Volya5',
+    img: 'dummy-event.png',
+    date: '07/02/2023 10h00',
+    address: '12 rue Volgan, Nantes',
+    description: 'Bla bla ablbllblalvllbal asdf lbla ldafjlsj. Bla bla lllalllllaaaa'
   },
 ];
 
