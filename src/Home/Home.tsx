@@ -1,34 +1,39 @@
 import { Badge, Button, Card } from 'react-bootstrap';
-import { Banner } from './Banner';
-import { partners, events, news } from '../fixtures';
+import React, { FC, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faCrosshairs } from '@fortawesome/free-solid-svg-icons';
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
-import { EVENTS_LINK } from '../App';
-import { useTranslation } from 'react-i18next';
+
+import { Banner } from './Banner';
+import { partners, events, news } from '../fixtures';
+import { CONTACT_US_LINK, EVENTS_LINK } from '../App';
 import dotGroupSVG from '../assets/dot-group.svg';
-import aideHumanPNG from '../assets/our-goals/collecte-laide-humanitaire.png';
-import inclusionPNG from '../assets/our-goals/inclusion-apporte-laide-deplaces.png';
-import sensibilisationPNG from '../assets/our-goals/sensibilisation-communication.png';
+// import aideHumanPNG from '../assets/our-goals/collecte-laide-humanitaire.png';
+// import inclusionPNG from '../assets/our-goals/inclusion-apporte-laide-deplaces.png';
+// import sensibilisationPNG from '../assets/our-goals/sensibilisation-communication.png';
 import { JoinUs } from '../JoinUs';
 import './Home.scss';
 
-const truncatedEvents = [...events].splice(0, 4 );
+const truncatedEvents = [...events].splice(0, 4);
 
-export const Home = () => {
+export function Home() {
   const { t } = useTranslation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div className={'home'}>
+    <div className="home">
       <Banner />
       <div className="goal-photos-container">
         {/* <div className="photo-collect" style={{'backgroundImage': aideHumanPNG}}> */}
         <div className="photo-collect">
-          <div>{t('collecte de l’aide humanitaire pour l’Ukraine')}</div>
+          <div>{t('collecte de l&quot;aide humanitaire pour l&quot;Ukraine')}</div>
         </div>
         {/* <div className="photo-inclusion" style={{'backgroundImage': inclusionPNG}}> */}
         <div className="photo-inclusion">
-          <div>{t('Inclusion et apporté de l’aide aux deplacés')}</div>
+          <div>{t('Inclusion et apporté de l&quot;aide aux deplacés')}</div>
         </div>
         {/* <div className="photo-sensibilisation" style={{'backgroundImage': sensibilisationPNG}}> */}
         <div className="photo-sensibilisation">
@@ -43,10 +48,10 @@ export const Home = () => {
           <h2>{t('Association VOLYA')}</h2>
           <p>
             {t(
-              'Nous sommes une association VOLYA, qui vise à sensibiliser la communauté locale de Loire Atlantique à la situation en Ukraine et à aider les personnes déplacées par la guerre. Nos objectifs comprennent l’aide humanitaire, la création de liens entre la France et l’Ukraine, la représentation de la communauté ukrainienne en France et l’organisation d’événements caritatifs et culturels pour promouvoir la culture ukrainienne en France. En outre, nous organisont des voyages d’intégration pour les ressortissants ukrainiens en France.'
+              'Nous sommes une association VOLYA, qui vise à sensibiliser la communauté locale de Loire Atlantique à la situation en Ukraine et à aider les personnes déplacées par la guerre. Nos objectifs comprennent l&quot;aide humanitaire, la création de liens entre la France et l&quot;Ukraine, la représentation de la communauté ukrainienne en France et l&quot;organisation d&quot;événements caritatifs et culturels pour promouvoir la culture ukrainienne en France. En outre, nous organisont des voyages d&quot;intégration pour les ressortissants ukrainiens en France.'
             )}
           </p>
-          <Button variant="warning" className={'info-btn'}>
+          <Button variant="warning" className="info-btn">
             {t('en savoir plus')}
           </Button>
         </div>
@@ -62,13 +67,16 @@ export const Home = () => {
             </li>
           ))}
         </ul>
-        <Button className={'CTA-btn'} variant="light">
+        {/* <Button className={'CTA-btn'} variant="light">
           {t('devenir partenaire')}
-        </Button>
+        </Button> */}
+        <Link to={CONTACT_US_LINK} className="CTA-btn">
+          {t('devenir partenaire')}
+        </Link>
       </div>
 
       <div className="events-container">
-        <h1 className="title">{'Événements'}</h1>
+        <h1 className="title">Événements</h1>
         <ul>
           {truncatedEvents.map((e) => (
             <li key={e.name}>
@@ -88,7 +96,7 @@ export const Home = () => {
             </li>
           ))}
         </ul>
-        <Link className={'all-events-btn btn btn-primary'} to={EVENTS_LINK}>
+        <Link className="all-events-btn btn btn-primary" to={EVENTS_LINK}>
           {t('Tout les evenements')}
         </Link>
       </div>
@@ -108,17 +116,17 @@ export const Home = () => {
             </li>
           ))}
         </ul>
-        <Button variant="light">{t('Plus d’actualités')}</Button>
+        <Button variant="light">{t('Plus d&quot;actualités')}</Button>
       </div>
 
-      <JoinUs/>
+      <JoinUs />
     </div>
   );
-};
+}
 
 type BadgePillType = { type: 'event' | 'news' };
 
-const BadgePill: FC<BadgePillType> = ({ type }) => {
+function BadgePill({ type }: BadgePillType): React.ReactNode {
   const { t } = useTranslation();
   switch (type) {
     case 'event':
@@ -132,4 +140,4 @@ const BadgePill: FC<BadgePillType> = ({ type }) => {
         </Badge>
       );
   }
-};
+}

@@ -1,17 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import './Events.scss';
 import { Card } from 'react-bootstrap';
+
 import { events } from './fixtures';
 import { JoinUs } from './JoinUs';
 
-export const Events = () => {
+export function Events() {
   const { t } = useTranslation();
   return (
     <div className="events">
       <h1>{t('Événements')}</h1>
       <div className="description">
         {t(
-          'Découvrez comment soutenir l’Ukraine : faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd’hui pour que l’Ukraine connaisse la gloire demain !'
+          'Découvrez comment soutenir l&quot;Ukraine : faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd&quot;hui pour que l&quot;Ukraine connaisse la gloire demain !'
         )}
       </div>
       <ul>
@@ -32,4 +33,4 @@ export const Events = () => {
       <JoinUs />
     </div>
   );
-};
+}

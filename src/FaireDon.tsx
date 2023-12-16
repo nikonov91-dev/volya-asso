@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
+
 import './FaireDon.scss';
 import { JoinUs } from './JoinUs';
 import dotGroupSVG from './assets/dot-group.svg';
 
-export const FaireDon = () => {
+export function FaireDon() {
   const { t } = useTranslation();
   return (
     <div className="faire-don">
@@ -24,15 +25,19 @@ export const FaireDon = () => {
       </div>
       <div className="utilisation-dons">
         <h2>{t('Comment on utilise vos dons')}</h2>
-        <p>{t('Lorem ipsum dolor sit amet consectetur. A mi feugiat enim consequat vitae at egestas felis. Lectus nibh tellus tellus eget sed felis. Feugiat enim consequat vitae at egestas felis.')}</p>
+        <p>
+          {t(
+            'Lorem ipsum dolor sit amet consectetur. A mi feugiat enim consequat vitae at egestas felis. Lectus nibh tellus tellus eget sed felis. Feugiat enim consequat vitae at egestas felis.'
+          )}
+        </p>
         <h4>{t('Nos projets:')}</h4>
         <ul>
-          <li>{t('Achat de produits essentiels  pour l’Ukraine ; ')}</li>
-          <li>{t('Inclusion et apporté de l’aide aux deplacés ; ')}</li>
+          <li>{t('Achat de produits essentiels  pour l&quot;Ukraine ; ')}</li>
+          <li>{t('Inclusion et apporté de l&quot;aide aux deplacés ; ')}</li>
           <li>{t('Organisation des événements culturels caritatifs.')}</li>
         </ul>
       </div>
       <JoinUs />
     </div>
   );
-};
+}

@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    browser: true,
+    browser: false,
     es2021: true,
   },
   settings: {
@@ -10,14 +10,16 @@ module.exports = {
   },
   extends: [
     'airbnb',
+    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
     'plugin:react/recommended',
     'plugin:testing-library/react',
     'plugin:jest-dom/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:json/recommended',
   ],
   parserOptions: {
-    parser: 'typescript',
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest',
     ecmaFeatures: {
       jsx: true,
@@ -26,7 +28,7 @@ module.exports = {
     sourceType: 'module',
     allowImportExportEverywhere: true,
   },
-  plugins: ['react', 'prettier', '@typescript-eslint'],
+  plugins: ['react', 'prettier', '@typescript-eslint', 'json-files'],
   overrides: [
     {
       files: ['src/**/*.tsx'],
@@ -34,30 +36,45 @@ module.exports = {
         quotes: [2, 'single'],
       },
     },
+    {
+      files: ['src/**/*.json'],
+      rules: {
+        'json-files/rule-name': 'error',
+      },
+    },
   ],
   rules: {
     camelcase: 0,
+    'jsx-a11y/alt-text': [0],
     'consistent-return': 0,
-    'no-nested-ternary': 0, // TODO: Should be removed
+    'no-nested-ternary': 0,
     'no-use-before-define': 0,
     'no-unused-vars': 0,
     'no-unused-expressions': 0,
-    'no-undef': 0, // TODO: Should be removed
+    'no-undef': 0,
     'no-underscore-dangle': 0,
     'no-param-reassign': 0,
     'prefer-promise-reject-errors': 0,
     'no-case-declarations': 0,
     'func-names': 0,
+    'no-irregular-whitespace': 1,
     'import/no-dynamic-require': 0,
     'global-require': 1,
-    'no-shadow': 0, // TODO: Should be removed
-    'no-fallthrough': 0, // TODO: Should be removed
-    'class-methods-use-this': 0, // TODO: Should be removed
-    'default-case': 0, // TODO: Should be removed
+    'comma-dangle': 0,
+    'no-shadow': 0,
+    'no-fallthrough': 0,
+    'class-methods-use-this': 0,
+    'default-case': 0,
     'no-new': 0,
     'no-redeclare': 0,
     '@typescript-eslint/no-redeclare': ['error'],
-    '@typescript-eslint/no-unused-vars': [2, { ignoreRestSiblings: true }],
+    '@typescript-eslint/no-unused-vars': [1, { ignoreRestSiblings: true }],
+    // "react/function-component-definition": [
+    //   2,
+    //   {
+    //     namedComponents: "function-declaration",
+    //   },
+    // ],
     'import/extensions': 0,
     'import/prefer-default-export': 0,
     'import/order': [
@@ -69,16 +86,6 @@ module.exports = {
             pattern: '{react*,react*/**}',
             group: 'external',
             position: 'before',
-          },
-          {
-            pattern: '{@api-client,@common-ui,@common-ui/**,@api-client/**,@abtasty/**}',
-            group: 'external',
-            position: 'after',
-          },
-          {
-            pattern: '@dashboard/**',
-            group: 'external',
-            position: 'after',
           },
           {
             pattern: '*.{css,scss}',
@@ -93,18 +100,6 @@ module.exports = {
     ],
     'import/no-extraneous-dependencies': 0,
     'import/no-unresolved': 0,
-
-    'jsx-a11y/click-events-have-key-events': 0,
-    'jsx-a11y/no-static-element-interactions': 0,
-    'jsx-a11y/no-noninteractive-element-to-interactive-role': 0,
-    'jsx-a11y/mouse-events-have-key-events': 0,
-    'jsx-a11y/label-has-associated-control': 0,
-    'jsx-a11y/alt-text': 0,
-    'jsx-a11y/aria-role': 0,
-    'jsx-a11y/aria-props': 0,
-    'jsx-a11y/no-noninteractive-tabindex': 0,
-    'jsx-a11y/no-noninteractive-element-interactions': 0,
-    'jsx-a11y/anchor-is-valid': 0,
     'prettier/prettier': [
       'error',
       {
@@ -118,7 +113,7 @@ module.exports = {
     'react/no-array-index-key': 0,
     'react/state-in-constructor': 0,
     'react/destructuring-assignment': 0,
-    'react/button-has-type': 0, // TODO: Should be removed
+    'react/button-has-type': 0,
     'react/static-property-placement': 0,
     'react/sort-comp': 0,
     'react/no-did-update-set-state': 0,

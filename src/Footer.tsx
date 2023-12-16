@@ -1,20 +1,21 @@
 import { Container, Image } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-import { faInstagram, faSquareFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faSquareFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 import { COLLECTE_AIDE_LINK, CONTACT_US_LINK, EVENTS_LINK, FAIRE_DON_LINK, HOME_LINK } from './App';
 
-export const Footer = () => {
+export function Footer() {
   const { t } = useTranslation();
   return (
     <div className="footer-container">
       <Container>
         <div className="footer-content">
           <div className="slogan">
-            <Image src={process.env.PUBLIC_URL + '/logo_volya.png'} />
-            <p>{t('Mettons notre volonté au soutien de la liberté de l’Ukraine', { context: 'footer' })}</p>
+            <Image src={`${process.env.PUBLIC_URL}/logo_volya.png`} />
+            <p>{t('Mettons notre volonté au soutien de la liberté de l&quot;Ukraine', { context: 'footer' })}</p>
           </div>
 
           <div className="link-categories">
@@ -33,7 +34,7 @@ export const Footer = () => {
                 <li className="disabled">{t('Legal', { context: 'footer' })}</li>
                 <li className="disabled">{t('Blog', { context: 'footer' })}</li>
                 {/* <li>
-                  <Link to={COLLECTE_AIDE_LINK}>{t('Collecter de l’aide', { context: 'footer' })}</Link>
+                  <Link to={COLLECTE_AIDE_LINK}>{t('Collecter de l&quot;aide', { context: 'footer' })}</Link>
                 </li> */}
               </ul>
             </div>
@@ -86,4 +87,4 @@ export const Footer = () => {
       </Container>
     </div>
   );
-};
+}
