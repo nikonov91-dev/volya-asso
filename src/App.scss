@@ -1,5 +1,6 @@
 $primary: #0090c3;
 $warning: #f0c717;
+$main-background: #faf8ef;
 
 :export {
   primaty: $primary;
@@ -34,10 +35,8 @@ $warning: #f0c717;
 
 body {
   background-color: #faf8ef;
-  // font-family: Montserrat;
-  // font-style: normal;
-  // font-weight: 400;
-  // line-height: normal;
+  font-family: 'Montserrat', sans-serif;
+  
   li {
     list-style-type: none;
   }
@@ -47,10 +46,10 @@ body {
   position: relative;
 
   .navbar-body {
-    margin-bottom: 60px; //100px
+    margin-bottom: 60px;
 
     .nav-logo {
-      height: 100px; //150
+      height: 100px;
     }
 
     .navbar-row {
@@ -156,14 +155,6 @@ body {
         @media (min-width: 576px) {
           flex-wrap: nowrap;
           justify-content: flex-end;
-
-          .link-groups {
-            // flex-basis: 33%;
-
-            &:last-child {
-              // flex-basis: 40%;
-            }
-          }
         }
 
         h6 {
@@ -180,13 +171,17 @@ body {
           li {
             margin-bottom: 10px;
             text-transform: capitalize;
+            
+            &.disabled{
+              color: rgb(140, 140, 140);
+            }
 
             a {
               color: black;
               text-decoration: none;
             }
 
-            .contacts a {
+            &.contacts a {
               text-transform: lowercase;
             }
 
@@ -199,7 +194,6 @@ body {
 
       .socials {
         flex-basis: 100%;
-        align-items: self-end;
         display: flex;
         flex-flow: row nowrap;
         justify-content: center;
@@ -234,7 +228,7 @@ body {
       position: absolute;
       top: 0;
       right: 0;
-      background-image: url('../public/dot-group.png');
+      background-image: url('~/public/dot-group.png');
       background-size: 500px 500px;
       background-repeat: no-repeat;
       background-position-x: right;
