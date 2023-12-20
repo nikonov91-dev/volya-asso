@@ -8,7 +8,7 @@ export function Banner() {
   const { t } = useTranslation();
   return (
     <div className="banner-container">
-      <h1>Mettons notre volonté au soutien de la liberté de l&quot;Ukraine</h1>
+      <h1>Mettons notre volonté au soutien de la liberté de l’Ukraine</h1>
       <div className="banner-CTA">
         {/* <Button>DEVENIR PARTENAIRE</Button> */}
         <Button>
@@ -18,7 +18,7 @@ export function Banner() {
         </Button>
         <Button variant="light">
           <Link to={CONTACT_US_LINK} style={{ color: 'white', textTransform: 'uppercase', textDecoration: 'none' }}>
-            {t('besoin d&quot;aide')}
+            {t('besoin d’aide')}
           </Link>
         </Button>
       </div>

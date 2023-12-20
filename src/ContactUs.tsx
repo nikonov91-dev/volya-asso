@@ -71,10 +71,10 @@ import './ContactUs.scss';
 //   };
 //   return (
 //     <div className="contact-us">
-//       <h1>{t('Vous voulez soutenir l&quot;Ukraine')}</h1>
+//       <h1>{t('Vous voulez soutenir l’Ukraine')}</h1>
 //       <div className="description">
 //         {t(
-//           'Découvrez comment soutenir l&quot;Ukraine : faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd&quot;hui pour que l&quot;Ukraine connaisse la gloire demain !'
+//           'Découvrez comment soutenir l’Ukraine : faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd’hui pour que l’Ukraine connaisse la gloire demain !'
 //         )}
 //       </div>
 //       <div className="left-column">

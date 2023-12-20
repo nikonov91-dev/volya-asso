@@ -10,10 +10,10 @@ export function CollecteAide() {
   const { t } = useTranslation();
   return (
     <div className="collecte-aide">
-      <h1>{t('Collecte de l&quot;aide humanitaire')}</h1>
+      <h1>{t('Collecte de l’aide humanitaire')}</h1>
       this page has to be specified better
       <div className="chiffres">
-        <img className="" src="/our-goals/collecte-laide-humanitaire.png" alt={t('Collecte de l&quot;aide humanitaire')} />
+        <img src="/our-goals/collecte-laide-humanitaire.png" alt={t('Collecte de l’aide humanitaire')} />
       </div>
       <JoinUs />
     </div>

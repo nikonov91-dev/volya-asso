@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react';
 import { Badge, Button, Card } from 'react-bootstrap';
-import React, { FC, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -7,36 +7,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faCrosshairs } from '@fortawesome/free-solid-svg-icons';
 
 import { Banner } from './Banner';
-import { partners, events, news } from '../fixtures';
+import { partners, events as eventFixture, news as newsFixture } from '../fixtures';
 import { CONTACT_US_LINK, EVENTS_LINK } from '../App';
 import dotGroupSVG from '../assets/dot-group.svg';
-// import aideHumanPNG from '../assets/our-goals/collecte-laide-humanitaire.png';
-// import inclusionPNG from '../assets/our-goals/inclusion-apporte-laide-deplaces.png';
-// import sensibilisationPNG from '../assets/our-goals/sensibilisation-communication.png';
+import aideHumanPNG from '../assets/our-goals/collecte-laide-humanitaire.png';
+import inclusionPNG from '../assets/our-goals/inclusion-apporte-laide-deplaces.png';
+import sensibilisationPNG from '../assets/our-goals/sensibilisation-communication.png';
 import { JoinUs } from '../JoinUs';
 import './Home.scss';
-
-const truncatedEvents = [...events].splice(0, 4);
+import { useEvents } from '../Events';
 
 export function Home() {
   const { t } = useTranslation();
+  const events = [...useEvents()].splice(0, 4);
+  const news = [...((process.env.REACT_APP_NEWS && JSON.parse(process.env.REACT_APP_NEWS)) || newsFixture)].splice(
+    0,
+    3
+  );
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="home">
       <Banner />
       <div className="goal-photos-container">
-        {/* <div className="photo-collect" style={{'backgroundImage': aideHumanPNG}}> */}
-        <div className="photo-collect">
-          <div>{t('collecte de l&quot;aide humanitaire pour l&quot;Ukraine')}</div>
+        <div className="photo-collect" style={{ backgroundImage: aideHumanPNG }}>
+          {/* <div className="photo-collect"> */}
+          <div>{t('collecte de l’aide humanitaire pour l’Ukraine')}</div>
         </div>
-        {/* <div className="photo-inclusion" style={{'backgroundImage': inclusionPNG}}> */}
-        <div className="photo-inclusion">
-          <div>{t('Inclusion et apporté de l&quot;aide aux deplacés')}</div>
+        <div className="photo-inclusion" style={{ backgroundImage: inclusionPNG }}>
+          {/* <div className="photo-inclusion"> */}
+          <div>{t('Inclusion et apporté de l’aide aux deplacés')}</div>
         </div>
-        {/* <div className="photo-sensibilisation" style={{'backgroundImage': sensibilisationPNG}}> */}
-        <div className="photo-sensibilisation">
+        <div className="photo-sensibilisation" style={{ backgroundImage: sensibilisationPNG }}>
+          {/* <div className="photo-sensibilisation"> */}
           <div>{t('sensibilisation et communication')}</div>
         </div>
       </div>
@@ -48,7 +53,7 @@ export function Home() {
           <h2>{t('Association VOLYA')}</h2>
           <p>
             {t(
-              'Nous sommes une association VOLYA, qui vise à sensibiliser la communauté locale de Loire Atlantique à la situation en Ukraine et à aider les personnes déplacées par la guerre. Nos objectifs comprennent l&quot;aide humanitaire, la création de liens entre la France et l&quot;Ukraine, la représentation de la communauté ukrainienne en France et l&quot;organisation d&quot;événements caritatifs et culturels pour promouvoir la culture ukrainienne en France. En outre, nous organisont des voyages d&quot;intégration pour les ressortissants ukrainiens en France.'
+              'Nous sommes une association VOLYA, qui vise à sensibiliser la communauté locale de Loire Atlantique à la situation en Ukraine et à aider les personnes déplacées par la guerre. Nos objectifs comprennent l’aide humanitaire, la création de liens entre la France et l’Ukraine, la représentation de la communauté ukrainienne en France et l’organisation d’événements caritatifs et culturels pour promouvoir la culture ukrainienne en France. En outre, nous organisont des voyages d’intégration pour les ressortissants ukrainiens en France.'
             )}
           </p>
           <Button variant="warning" className="info-btn">
@@ -78,7 +83,7 @@ export function Home() {
       <div className="events-container">
         <h1 className="title">Événements</h1>
         <ul>
-          {truncatedEvents.map((e) => (
+          {events.map((e) => (
             <li key={e.name}>
               <img src={`${process.env.PUBLIC_URL}/events/${e.img}`} alt={`partner-${e.name}`} />
               <div className="info">
@@ -116,7 +121,7 @@ export function Home() {
             </li>
           ))}
         </ul>
-        <Button variant="light">{t('Plus d&quot;actualités')}</Button>
+        <Button variant="light">{t('Plus d’actualités')}</Button>
       </div>
 
       <JoinUs />

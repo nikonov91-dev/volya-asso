@@ -1,18 +1,42 @@
 import { useTranslation } from 'react-i18next';
-import './Events.scss';
 import { Card } from 'react-bootstrap';
+import { useEffect } from 'react';
 
-import { events } from './fixtures';
+import { events as fixture } from './fixtures';
 import { JoinUs } from './JoinUs';
+import './Events.scss';
+
+export type Event = {
+  name: string;
+  img: string;
+  date: string;
+  address: string;
+  description: string;
+};
+
+export const useEvents = () => {
+  let events: Event[] = [];
+  try {
+    events = JSON.parse(process.env.REACT_APP_EVENTS as string);
+  } catch {
+    events = fixture;
+  }
+
+  return events;
+};
 
 export function Events() {
   const { t } = useTranslation();
+  const events = useEvents();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="events">
       <h1>{t('Événements')}</h1>
       <div className="description">
         {t(
-          'Découvrez comment soutenir l&quot;Ukraine : faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd&quot;hui pour que l&quot;Ukraine connaisse la gloire demain !'
+          'Découvrez comment soutenir l’Ukraine : faites un don, signez une pétition, participez à des manifestations ou à des campagnes de sensibilisation. Rejoignez-nous aujourd’hui pour que l’Ukraine connaisse la gloire demain !'
         )}
       </div>
       <ul>

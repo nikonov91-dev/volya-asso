@@ -1,6 +1,7 @@
 {
   "name": "volya-4",
   "version": "0.1.0",
+  "homepage": "https://nikonov91-dev.github.io/volya-asso/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",

@@ -12,10 +12,11 @@ import './App.scss';
 
 export const HOME_LINK = `${process.env.PUBLIC_URL}/`;
 export const EVENTS_LINK = `${process.env.PUBLIC_URL}/evenements`;
-export const COLLECTE_AIDE_LINK = `${process.env.PUBLIC_URL}/aide-a-collecter`;
 export const FAIRE_DON_LINK = `${process.env.PUBLIC_URL}/faire-don`;
+// export const COLLECTE_AIDE_LINK = `${process.env.PUBLIC_URL}/aide-a-collecter`;
 // export const CONTACT_US_LINK = process.env.PUBLIC_URL + '/contacter-nous';
-export const CONTACT_US_LINK = 'https://google.com';
+export const COLLECTE_AIDE_LINK = process.env.REACT_APP_COLLECTE_AIDE_LINK || '';
+export const CONTACT_US_LINK = process.env.REACT_APP_CONTACT_US_LINK || '';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         <Routes>
           <Route path={HOME_LINK} element={<Home />} />
           <Route path={EVENTS_LINK} element={<Events />} />
-          <Route path={COLLECTE_AIDE_LINK} element={<CollecteAide />} />
+          {/* <Route path={COLLECTE_AIDE_LINK} element={<CollecteAide />} /> */}
           <Route path={FAIRE_DON_LINK} element={<FaireDon />} />
           {/* <Route path={CONTACT_US_LINK} element={<ContactUs/>}/> */}
         </Routes>

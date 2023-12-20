@@ -15,7 +15,7 @@ export function Footer() {
         <div className="footer-content">
           <div className="slogan">
             <Image src={`${process.env.PUBLIC_URL}/logo_volya.png`} />
-            <p>{t('Mettons notre volonté au soutien de la liberté de l&quot;Ukraine', { context: 'footer' })}</p>
+            <p>{t('Mettons notre volonté au soutien de la liberté de l’Ukraine', { context: 'footer' })}</p>
           </div>
 
           <div className="link-categories">
@@ -34,7 +34,7 @@ export function Footer() {
                 <li className="disabled">{t('Legal', { context: 'footer' })}</li>
                 <li className="disabled">{t('Blog', { context: 'footer' })}</li>
                 {/* <li>
-                  <Link to={COLLECTE_AIDE_LINK}>{t('Collecter de l&quot;aide', { context: 'footer' })}</Link>
+                  <Link to={COLLECTE_AIDE_LINK}>{t('Collecter de l’aide', { context: 'footer' })}</Link>
                 </li> */}
               </ul>
             </div>

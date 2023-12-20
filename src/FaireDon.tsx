@@ -32,8 +32,8 @@ export function FaireDon() {
         </p>
         <h4>{t('Nos projets:')}</h4>
         <ul>
-          <li>{t('Achat de produits essentiels  pour l&quot;Ukraine ; ')}</li>
-          <li>{t('Inclusion et apporté de l&quot;aide aux deplacés ; ')}</li>
+          <li>{t('Achat de produits essentiels  pour l’Ukraine ; ')}</li>
+          <li>{t('Inclusion et apporté de l’aide aux deplacés ; ')}</li>
           <li>{t('Organisation des événements culturels caritatifs.')}</li>
         </ul>
       </div>
