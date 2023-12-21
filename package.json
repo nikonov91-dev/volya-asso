@@ -65,12 +65,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "lint": "npx eslint --fix --ext .ts,.tsx,.json . && stylelint --allow-empty-input \"**/*.{css,scss}\"",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "trans": "npx nodemon ./nodemon.json"
+    "trans": "i18next 'src/**/*.tsx' --config i18next-parser.config.ts",
+    "trans-non-stop": "npx nodemon ./nodemon.json"
   },
   "eslintConfig": {
     "extends": [
