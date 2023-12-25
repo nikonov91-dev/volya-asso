@@ -8,6 +8,10 @@ Install globally:
 * prettier
 * eslint
 
+Create the `.env` and add next variables:
+`REACT_APP_COLLECTE_AIDE_LINK=https://google.com`
+`REACT_APP_CONTACT_US_LINK=https://google.com`
+
 ## Run the project
 
 Use `npm install` or `yarn` to install the app dependencies.
