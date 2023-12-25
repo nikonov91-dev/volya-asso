@@ -8,12 +8,6 @@ Install globally:
 * prettier
 * eslint
 
-Create the `.env` and add next variables:
-`REACT_APP_EVENTS=[ { (data in json format) }]`
-`REACT_APP_NEWS=[{ (data in json format) }]`
-`REACT_APP_COLLECTE_AIDE_LINK=https://google.com`
-`REACT_APP_CONTACT_US_LINK=https://google.com`
-
 ## Run the project
 
 Use `npm install` or `yarn` to install the app dependencies.
@@ -38,6 +32,10 @@ In the project directory, you can run:
 https://github.com/nikonov91-dev/volya-asso
 
 Add env.variables in GitHub going in `Settings->Environments->Configure github-pages->Environment variables`
+
+## Edit existing data in project
+
+Update `fixtures.ts` and upload imgs into `src/assets`.
 
 ## Learn More
 
