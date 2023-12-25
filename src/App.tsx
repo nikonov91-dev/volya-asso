@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router';
 import { Container } from 'react-bootstrap';
 
 import { Navigation } from './Navigation';
-import { Home } from './Home/Home';
+import { Home } from './Home';
 import { Events } from './Events';
 import { Footer } from './Footer';
 import { CollecteAide } from './CollecteAide';

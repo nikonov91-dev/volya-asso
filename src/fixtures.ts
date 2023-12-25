@@ -78,4 +78,16 @@ export const news = [
     badge: 'news',
     description: 'Concert laïc de Noël ukrainien organisé par des déplacés',
   },
+  {
+    name: 'noel-ukrainien4',
+    img: 'dummy-concert.png',
+    badge: 'news',
+    description: 'Concert laïc de Noël ukrainien organisé par des déplacés',
+  },
+  {
+    name: 'noel-ukrainien5',
+    img: 'dummy-concert.png',
+    badge: 'news',
+    description: 'Concert laïc de Noël ukrainien organisé par des déplacés',
+  },
 ];

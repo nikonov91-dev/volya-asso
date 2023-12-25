@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Card } from 'react-bootstrap';
 import { useEffect } from 'react';
 
-import { events as fixture } from './fixtures';
+import { events } from './fixtures';
 import { JoinUs } from './JoinUs';
 import './Events.scss';
 
@@ -15,13 +15,6 @@ export type Event = {
 };
 
 export const useEvents = () => {
-  let events: Event[] = [];
-  try {
-    events = JSON.parse(process.env.REACT_APP_EVENTS as string);
-  } catch {
-    events = fixture;
-  }
-
   return events;
 };
 

@@ -18,6 +18,16 @@ export function Footer() {
             <p>{t('Mettons notre volonté au soutien de la liberté de l’Ukraine', { context: 'footer' })}</p>
           </div>
 
+          <div className="socials">
+            <FontAwesomeIcon icon={faInstagram} />
+            <FontAwesomeIcon icon={faLinkedin} />
+            <FontAwesomeIcon icon={faSquareFacebook} />
+            <FontAwesomeIcon icon={faTwitter} />
+            <NavLink className="btn btn-primary" to={FAIRE_DON_LINK}>
+              {t('Faire Don')}
+            </NavLink>
+          </div>
+
           <div className="link-categories">
             <div className="link-groups">
               <h6>{t('A Propos', { context: 'footer' })}</h6>
@@ -25,33 +35,33 @@ export function Footer() {
                 <li>
                   <Link to={HOME_LINK}>{t('Home', { context: 'footer' })}</Link>
                 </li>
-                <li className="disabled">{t('Actions', { context: 'footer' })}</li>
-                <li className="disabled">{t('Mission', { context: 'footer' })}</li>
-                <li className="disabled">{t('Equipe', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Actions', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Mission', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Equipe', { context: 'footer' })}</li>
                 <li>
                   <Link to={EVENTS_LINK}>{t('Événements', { context: 'footer' })}</Link>
                 </li>
-                <li className="disabled">{t('Legal', { context: 'footer' })}</li>
-                <li className="disabled">{t('Blog', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Legal', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Blog', { context: 'footer' })}</li>
                 {/* <li>
                   <Link to={COLLECTE_AIDE_LINK}>{t('Collecter de l’aide', { context: 'footer' })}</Link>
                 </li> */}
               </ul>
             </div>
             <div className="link-groups">
-              <h6>{t('Refugies', { context: 'footer' })}</h6>
+              <h6 className="disabled-font">{t('Refugies', { context: 'footer' })}</h6>
               <ul>
-                <li className="disabled">{t('Liens Utiles', { context: 'footer' })}</li>
-                <li className="disabled">{t('Cours FLE', { context: 'footer' })}</li>
-                <li className="disabled">{t('travail', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Liens Utiles', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Cours FLE', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('travail', { context: 'footer' })}</li>
               </ul>
             </div>
             <div className="link-groups">
-              <h6>{t('Nous Rejoindre', { context: 'footer' })}</h6>
+              <h6 className="disabled-font">{t('Nous Rejoindre', { context: 'footer' })}</h6>
               <ul>
-                <li className="disabled">{t('Benevoles', { context: 'footer' })}</li>
-                <li className="disabled">{t('Partenaires', { context: 'footer' })}</li>
-                <li className="disabled">{t('Liens', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Benevoles', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Partenaires', { context: 'footer' })}</li>
+                <li className="disabled-font">{t('Liens', { context: 'footer' })}</li>
               </ul>
             </div>
             <div className="link-groups">
@@ -72,16 +82,6 @@ export function Footer() {
                 </li>
               </ul>
             </div>
-          </div>
-
-          <div className="socials">
-            <FontAwesomeIcon icon={faInstagram} />
-            <FontAwesomeIcon icon={faLinkedin} />
-            <FontAwesomeIcon icon={faSquareFacebook} />
-            <FontAwesomeIcon icon={faTwitter} />
-            <NavLink className="btn btn-primary" to={FAIRE_DON_LINK}>
-              {t('Faire Don')}
-            </NavLink>
           </div>
         </div>
       </Container>
